@@ -649,6 +649,7 @@ That’s it for a while. I hope to have introduced enough concepts to support ho
 
 # References and useful links
 
+- Originally posted on <https://dev.to/halan/4-ways-of-symmetric-cryptography-and-javascript-how-to-aes-with-javascript-3o1b>
 - Cryptography and Network Security: Principles and Practice by William Stallings - <http://williamstallings.com/Cryptography/>
 - <https://www.w3.org/TR/WebCryptoAPI/>
 - <https://nodejs.org/api/crypto.html#crypto_crypto>

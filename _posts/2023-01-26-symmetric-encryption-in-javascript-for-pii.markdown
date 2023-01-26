@@ -189,6 +189,7 @@ In summary, if you need to store sensible data as PII, never do it as plain text
 
 # References and useful links
 
+- Originally posted on <https://blog.codeminer42.com/symmetric-encryption-in-javascript-for-pii/>
 - [https://www.cossacklabs.com/blog/pii-encryption-requirements-cheatsheet/](https://www.cossacklabs.com/blog/pii-encryption-requirements-cheatsheet/)
 - [https://www.dol.gov/general/ppii](https://www.dol.gov/general/ppii)
 - [https://dev.to/halan/4-ways-of-symmetric-cryptography-and-javascript-how-to-aes-with-javascript-3o1b](https://dev.to/halan/4-ways-of-symmetric-cryptography-and-javascript-how-to-aes-with-javascript-3o1b)
