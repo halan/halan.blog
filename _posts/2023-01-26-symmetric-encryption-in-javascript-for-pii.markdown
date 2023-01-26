@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Symmetric Encryption in JavaScript for PII: Best Practices for PII Data Protection"
+title:  "Symmetric Encryption in JavaScript: Best Practices for PII Data Protection"
 date:   2023-01-26 00:00:00 -0300
 categories: cryptography javascript security
 ---
@@ -11,7 +11,7 @@ While this article provides an overview of symmetric encryption and its implemen
 
 # Introduction
 
-This article builds upon the concepts discussed in my previous article, "[4 Ways of Symmetric Cryptography and JavaScript: How to AES with JavaScript](https://dev.to/halan/4-ways-of-symmetric-cryptography-and-javascript-how-to-aes-with-javascript-3o1b)" published in Sep 2019. It will delve into a specific application of previously covered techniques, utilizing only standard APIs. While some key concepts may be briefly reviewed, it is assumed that the reader has already read the aforementioned article. The main focus of this one will be the exploration of a specific use case: PII Data Protection.
+This article builds upon the concepts discussed in my previous article, "[4 Ways of Symmetric Cryptography and JavaScript: How to AES with JavaScript](https://halan.blog/cryptography/javascript/security/2019/09/17/4-ways-of-symmetric-cryptography-in-javascript.html)" published in Sep 2019. It will delve into a specific application of previously covered techniques, utilizing only standard APIs. While some key concepts may be briefly reviewed, it is assumed that the reader has already read the aforementioned article. The main focus of this one will be the exploration of a specific use case: PII Data Protection.
 
 Protecting personal identification information (PII, [https://www.dol.gov/general/ppii](https://www.dol.gov/general/ppii)) is of the utmost importance today. One of the most effective ways to safeguard sensitive data is through encryption. This article will focus on symmetric encryption and explore the options available within JavaScript environments.  With symmetric encryption, the same key is used for encrypting and decrypting data. This is suitable for cases where the same party that stores the data will also be responsible for reading it, eliminating the need for separate encryption and decryption keys.
 
