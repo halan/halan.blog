@@ -9,7 +9,7 @@ I was informed of this issue during a 1:1 meeting with a team colleague another 
 
 In these situations, it's normal for a git specialist or senior team member to be called upon to provide strategies and solve the issue. My goal is for you to become that go-to person for resolving these issues beyond just using the basic `reflog` command.
 
-## There is no commit deleted/overridden!
+# There is no commit deleted/overridden!
 
 No one did it. A commit cannot be overridden in terms of its content and hash. What happens is that your commit is no longer referenced. No commits or branches are pointing to it, so it's unreachable. But it still exists, and bringing it back to your working tree is fine. Take a deep breath and follow me.
 
@@ -40,7 +40,7 @@ c1<-—c2<-´—--c2<--c4 (feature1)
 
 All commits are now reachable through the available branches. It’s crucial because when you perform a `git fetch` or `git pull`, only reachable commits will be downloaded, meaning only commits pointed to by a branch or another commit as its parent will be retrieved. In the case of the force push, `git fetch` would retrieve commit `d1` because branch `feature2` points to it, `d1` points to `c2`, and so on. In the first scenario, your commit was not overridden or deleted. It's just unreachable and not attached to any branch, making it somewhat invisible to `git fetch` or `git pull`. The solution is to create a branch pointing to the unreachable commit and then decide what to do with it. We'll discuss that further in a bit.
 
-## Why are my commits duplicated? Who did it?
+# Why are my commits duplicated? Who did it?
 
 You've done it. Many people typically run `git pull` with the default setting to merge (it's the default setting when `pulling.rebase` is false). The combination of rebasing and merging can result in duplications. As previously explained, your original commits are never deleted and are on your machine. If someone rebases them, and you then run `git pull` with the merge option, it will duplicate all of your commits. **Rebase is an operation that takes a joint base and reapplies a sequence of commits** (as you can read in the output). Reapplying a commit means changing the parent id pointer, effectively changing its base. When you change a base of a commit, it results in a new commit hash, so you end up with a commit pointing to nearly the same code, with the same commit message, but pointing to a different base. It's not a perfect duplication, but a very confusing commit with likely the same code and message.
 
@@ -63,7 +63,7 @@ c1<-—c2<-´—--d1<--d2<--c3rebased<--c4rebased<--`c5 (feature1)
 
 If you run a git, pull with merge while your local still points to `c4`, the remote will easily accept `c5`, which points to both remote HEAD `c4rebased` and your `c4`. However, remember that `c3` and `c4` are already on the remote. With the addition of `c5`, you will now have a duplication situation with `c3rebased`/`c3` and `c4rebased`/`c4` being almost identical commits. We’re facing a classic on the Git world that is widely covered by articles, especially by the awesome [Pro GIT](https://git-scm.com/book/en/v2/Git-Branching-Rebasing#_rebase_peril). While many resources advise against it, few guide what to do if it occurs.
 
-## Reflog cannot tell you the entire history of the crime.
+# Reflog cannot tell you the entire history of the crime.
 
 Reflog is often considered a go-to tool when dealing with that issue. It is essentially a log of all updates made to references on the **local machine**. Every time a reference is updated, a reflog entry is generated, which includes important Git activities such as `checkout`, `reset`, `rebase`,  `clone`... Knowing the commit hash before a specific operation allows you to examine, merge, checkout, or perform any other action on that commit, making reflog an essential tool for Git management.
 
@@ -71,7 +71,7 @@ The challenge is that while reflog keeps track of your own local Git movements, 
 
 Imagine you're part of a team using Github. You receive a call from the team informing you that someone has duplicated, deleted, or forced a push and damaged a branch. It took the team some time to realize the mistake, so they kept pushing more commits, but eventually, they noticed that a significant amount of code was missing. What would be the best place to start investigating? Reflog? But whose reflog, yours or Github's?
 
-## Finding the lost commit on GitHub.
+# Finding the lost commit on GitHub.
 
 Github offers robust APIs that surpass git functionality, such as pull requests which are not a git feature but a Github interpretation of branches. They offer an [API endpoint](https://docs.github.com/en/rest/activity/events?apiVersion=2022-11-28) that can assist us in a similar manner of Reflog. This endpoint includes a Log of Events; a key event in this log is the PushEvent. This event will be your best ally when investigating the issue. Let's take a look at an example of Github events on a public repository:
 
