@@ -102,7 +102,7 @@ GET https://api.github.com/repos/<USER>/<REPO>/events
 ...
 ```
 
-The payload of each PushEvent contains the "head" and "before" keys. The "before" key indicates the commit present before the push. You can then check the commit to see if it's still accessible: *https://github.com/USER/REPO/commit/8250b4679453c095eab2f60d9147ca2fe4da32c6*. With the commit hash, you can now retrieve it.
+The payload of each PushEvent contains the "head" and "before" keys. The "before" key indicates the commit present before the push. You can then check the commit to see if it's still accessible: `https://github.com/USER/REPO/commit/8250b4679453c095eab2f60d9147ca2fe4da32c6`. With the commit hash, you can now retrieve it.
 
 ```
 git fetch origin 8250b4679453c095eab2f60d9147ca2fe4da32c6
