@@ -38,8 +38,6 @@ Imagine that instead of forcibly pushing commit `d1`, your colleague created a n
 c1<-—c2<-´—--c2<--c4 (feature1)
 ```
 
-Now we have all commits reachable by the available branches. It’s crucial because when you do a `git fetch`  (or `git pull`), it’ll download just reachable commits. I mean, it’ll get only commits pointed by a branch or by another commit as their parent on that way. On the push force example, `git fetch` will get d1 because the branch feature2 points to it, d1 points to c2, and go on. So your commit was net overridden or deleted, it probably is unreachable, out from any branch, and it makes it kind of invisible by `git fetch` or `git pull`. The challenge here is to create a branch pointing to it and decide what to do with it. We’ll cover it soon here.
-
 All commits are now reachable through the available branches. It’s crucial because when you perform a `git fetch` or `git pull`, only reachable commits will be downloaded, meaning only commits pointed to by a branch or another commit as its parent will be retrieved. In the case of the force push, `git fetch` would retrieve commit `d1` because branch `feature2` points to it, `d1` points to `c2`, and so on. In the first scenario, your commit was not overridden or deleted. It's just unreachable and not attached to any branch, making it somewhat invisible to `git fetch` or `git pull`. The solution is to create a branch pointing to the unreachable commit and then decide what to do with it. We'll discuss that further in a bit.
 
 ## Why are my commits duplicated? Who did it?
