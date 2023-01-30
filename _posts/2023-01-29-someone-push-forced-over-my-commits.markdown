@@ -5,7 +5,7 @@ date:   2023-01-29 00:00:00 -0300
 categories: git
 ---
 
-I was informed of this issue during a 1:1 meeting with a team colleague another time. I've also heard similar experiences discussed in a team standup a few weeks ago. This is a common issue I've encountered in my experience working with git throughout the years. It's an issue that I've encountered many times before. I've also had instances where my commits have been removed. Even with a good workflow agreed upon by the team, it can still happen. Sometimes, mistakes happen, and it's essential to deeply understand git/GitHub and the correct tools to resolve issues.
+I was informed of this issue during a 1:1 meeting with a team colleague another time. I've also heard similar experiences discussed in a team standup a few weeks ago. This is a common issue I've encountered in my experience working with git throughout the years. I've also had instances where my commits have been removed. Even with a good workflow agreed upon by the team, it can still happen. Sometimes, mistakes happen, and it's essential to deeply understand git/GitHub and the correct tools to resolve issues.
 
 In these situations, it's normal for a git specialist or senior team member to be called upon to provide strategies and solve the issue. My goal is for you to become that go-to person for resolving these issues beyond just using the basic `reflog` command.
 
