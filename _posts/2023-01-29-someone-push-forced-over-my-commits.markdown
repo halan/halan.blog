@@ -61,7 +61,7 @@ Assuming your local is still pointing to `c4`, and you perform a `git pull` with
 c1<-—c2<-´—--d1<--d2<--c3rebased<--c4rebased<--`c5 (feature1)
 ```
 
-If you run a git, pull with merge while your local still points to `c4`, the remote will easily accept `c5`, which points to both remote HEAD `c4rebased` and your `c4`. However, remember that `c3` and `c4` are already on the remote. With the addition of `c5`, you will now have a duplication situation with `c3rebased`/`c3` and `c4rebased`/`c4` being almost identical commits. We’re facing a classic on the Git world that is widely covered by articles, especially by the [awesome Pro GIT](https://git-scm.com/book/en/v2/Git-Branching-Rebasing#_rebase_peril). While many resources advise against it, few guide what to do if it occurs.
+If you run a git, pull with merge while your local still points to `c4`, the remote will easily accept `c5`, which points to both remote HEAD `c4rebased` and your `c4`. However, remember that `c3` and `c4` are already on the remote. With the addition of `c5`, you will now have a duplication situation with `c3rebased`/`c3` and `c4rebased`/`c4` being almost identical commits. We’re facing a classic on the Git world that is widely covered by articles, especially by the awesome [Pro GIT](https://git-scm.com/book/en/v2/Git-Branching-Rebasing#_rebase_peril). While many resources advise against it, few guide what to do if it occurs.
 
 ## Reflog cannot tell you the entire history of the crime.
 
